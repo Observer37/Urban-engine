@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"> 	
+		<title></title>
+		
+		<style>
+		
+		
+		
+		#class1 li
+		{
+			display: inline;
+		
+			margin-right: 10px;    #Class1 li = displays class1 as a list, in a line around 10 px to the right
+			
+			float: left;	
+		}
+		
+		#ac li
+		{
+			display: inline;
+			width:100%;
+					                          #ac li = displays ac as a list, and sets it as the "container" of class1, also using left
+			margin-right: 10px;
+			
+			float: left;
+		}
+		 
+		
+
+		#class2 li
+		{
+		display: inline;
+				
+		margin-right: 10px;     #Same as class1, but a diffrent item.
+		
+		float: left;
+
+		}
+		
+		
+		
+		</style>
+		
+		<script>
+		function calculateGPA()
+		{
+
+			var a1 = document.getElementById("a1").value
+			var a2 = document.getElementById("a2").value                     #This function essentially allows someone to input data into the system to calculate.
+			var a3 = document.getElementById("a3").value
+			var a4 = document.getElementById("a4").value 
+			
+			var b1 = document.getElementById("b1").value
+			var b2 = document.getElementById("b2").value
+			var b3 = document.getElementById("b3").value
+			var b4 = document.getElementById("b4").value 
+			
+			
+			var allScore = a4+b4
+			var gpa = (a3*a1+(1-a3)*a2)*(a4*allScore)+(b3*b1+(1-b3)*b2)*(b4/allScore)       #The formula used to get solution from inputed data by turning it into the var gpa
+			document.getElementById("gpa_text").innerHTML= gpa
+		}
+		
+		</script>
+		
+		
+		
+	</head>
+	<body>
+		<ul id="class1">
+			<li>
+				<p>a1</p>
+				<input type="number" id="a1"/> #This displays all of a1 as the first row of boxes and uses the id to signify what it is called
+			</li>
+			
+			<li>	
+				<p>a2</p>
+				<input type="number" id="a2"/> 
+			</li> 
+			<li>
+				<p>a3</p>
+				<input type="number" id="a3"/> 
+			</li>
+			<li>
+				<p>a4</p>
+				<input type="number" id="a4"/> 
+			</li>
+	
+		</ul>
+		
+		<ul id = "ac">
+			<li>
+				<p></p>
+			</li>
+		</ul>
+		
+		
+		
+		
+		<ul id="2">
+			<p> </p>
+		</ul>
+		
+		<ul id="class2">
+				<li>
+					<p>b1</p>
+					<input type="number" id="b1"/> 
+				</li>
+				
+				<li>
+					<p>b2</p>
+					<input type="number" id="b2"/> 
+				</li>                                 #Same as the above, but for the second row
+				<li>
+					<p>b3</p>
+					<input type="number" id="b3"/> 
+				</li>
+				<li>
+					<p>b4</p>
+					<input type="number" id="b4"/> 
+				</li>
+			</ul>
+		
+		<li>
+			<p>GPA:</p>
+			<p id="gpa_text"></p>      #displays the gpa score recieved
+			
+			<button id="gpa_calculate" onclick="calculateGPA()">Calculate!</button> #runs the program by Taking the inputted data when the button "Calculate!" is clicked
+		</li>
+	</body>
+	
+</html>
